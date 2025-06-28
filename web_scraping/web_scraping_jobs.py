@@ -32,5 +32,5 @@ print(df)
 p = input("Continue ? ")
 if p == 'n':
     exit(0)
-df.to_csv("./data/Jobs_data_append.csv",index = False)
+df.to_csv("./data/Jobs_data_.csv",index = False)
 print("🌟 Saved data")
