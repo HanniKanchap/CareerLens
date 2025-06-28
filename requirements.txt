@@ -1,0 +1,15 @@
+pandas
+numpy
+streamlit
+matplotlib
+wordcloud
+spacy
+PyPDF2
+beautifulsoup4
+requests
+selenium
+webdriver-manager
+fake_useragent
+PyMuPDF
+transformers
+torch
