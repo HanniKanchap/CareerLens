@@ -13,3 +13,6 @@ fake_useragent
 PyMuPDF
 transformers
 torch
+reportlab
+langchain
+langchain-groq
