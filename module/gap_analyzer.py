@@ -6,7 +6,7 @@ def evaluate_resume(extracted_skills, expected_keywords, role):
 
     return {
         "Role": role,
-        "Score (out of 10)": match_score,
+        "Score": match_score,
         "Matched Keywords": list(matched),
         "Suggested Improvements": list(suggestions)
     }

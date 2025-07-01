@@ -1,15 +1,13 @@
 import fitz  # PyMuPDF
 from pathlib import Path
-from skill_extractor import load_skill_database
-from gap_analyzer import evaluate_resume
-from gpt_feedback import  resume_feedback
 
-def extract_text_from_pdf(file_path):
+def extract_text_from_pdf(file_obj):
     text = ""
-    with fitz.open(file_path) as doc:
+    with fitz.open(stream=file_obj.read(), filetype="pdf") as doc:
         for page in doc:
             text += page.get_text()
     return text.lower()
+
 
 def extract_skills(text, keywords):
     return [word for word in keywords if word in text]
@@ -33,7 +31,7 @@ def main(resume_path, skill_db_path, role):
 
     if report:
         print(f"📌 Role: {report['Role']}")
-        print(f"⭐ Score: {report['Score (out of 10)']} / 10")
+        print(f"⭐ Score: {report['Score']} / 10")
         print(f"✅ Matched Keywords: {', '.join(report['Matched Keywords']) or 'None'}")
         if report['Suggested Improvements']:
             print("💡 Suggestions:")
@@ -46,6 +44,10 @@ def main(resume_path, skill_db_path, role):
         print("\n" + "-" * 60 + "\n")
 
 if __name__ == "__main__":
+    from load_dataset import load_skill_database
+    from gap_analyzer import evaluate_resume
+    from gpt_feedback import  resume_feedback
+
     resume_path = Path("module") / "Resume.pdf"
     skill_db_path = Path("data/skills_data.csv")
     role = "Data Analyst"

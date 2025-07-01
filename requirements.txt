@@ -7,12 +7,10 @@ spacy
 PyPDF2
 beautifulsoup4
 requests
-selenium
-webdriver-manager
-fake_useragent
 PyMuPDF
 transformers
 torch
 reportlab
 langchain
 langchain-groq
+markdown

@@ -13,8 +13,8 @@ def resume_feedback(resume_text, expected, role):
     prompt = (
         f"Here is my resume content: {resume_text}\n"
         f"These are the expected skills: {expected}.\n"
-        f"Suggest skills I should acquire and resources to use to improve ATS score for a {role} role. "
-        f"Provide the output in bullet points."
+        f"Suggest the skills I should acquire and resources to use to improve Skills for a {role} role. "
+        f"Provide the output in bullet points and the links where applicable."
     )
     response = llm.invoke(prompt)
     return response.text().strip().split('\n')
