@@ -12,7 +12,6 @@ import streamlit as st
 # Set full-page background image
 
 st.title("📄 RoleFit Analyzer")
-st.caption("Optimize your skills for the role that fits")
 
 # Upload section
 uploaded_file = st.file_uploader("Upload your resume (PDF)", type=["pdf"])

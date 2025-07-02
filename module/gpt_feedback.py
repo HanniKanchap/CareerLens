@@ -18,3 +18,13 @@ def resume_feedback(resume_text, expected, role):
     )
     response = llm.invoke(prompt)
     return response.text().strip().split('\n')
+
+def chat_groq(query):
+    load_dotenv(dotenv_path="data/keys.env")
+    llm = ChatGroq(model="meta-llama/llama-4-scout-17b-16e-instruct",
+        temperature=0,
+        max_retries=2,
+        groq_api_key=os.getenv('GROQ_API_KEY')
+    )
+    response = llm.invoke(query)
+    return response.text()
