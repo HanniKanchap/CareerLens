@@ -12,8 +12,8 @@ def load_skill_database(csv_path, role):
         return set()
 
     keywords_series = pd.concat([
-        filtered_df["ATS Keywords"].dropna().str.split(","),
-        filtered_df["Skills"].dropna().str.split(",")
+        filtered_df["ATS Keywords"].str.split(","),
+        filtered_df["Skills"].str.split(",")
     ]).explode().str.strip().dropna()
-
+    
     return set(keywords_series)

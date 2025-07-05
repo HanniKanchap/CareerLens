@@ -36,8 +36,10 @@ if uploaded_file and selected_role != "-- Select Job role --":
     st.markdown("##### ✅ Skill Match Score")
     st.progress(report['Score'] / 10)
     if report['Matched Keywords']:
+        matched = []
         for keyword in report['Matched Keywords']:
-            st.markdown(f"**Matched Skills:** `{keyword}`")
+            matched.append(keyword)
+        st.markdown(f"**Matched Skills:** `{', '.join(matched)}`")
     else:
         st.markdown(f"**Matched Skills:**  `🔍 No relevant skills found` ")
 

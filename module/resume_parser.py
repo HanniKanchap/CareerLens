@@ -1,16 +1,31 @@
 import fitz  # PyMuPDF
 from pathlib import Path
+import re
+import unicodedata
+import string
 
 def extract_text_from_pdf(file_obj):
     text = ""
     with fitz.open(stream=file_obj.read(), filetype="pdf") as doc:
         for page in doc:
             text += page.get_text()
-    return text.lower()
+    return text
 
+def preprocess_text(text):
+    text = text.lower()
+    text = unicodedata.normalize("NFKD", text) 
+    text = text.translate(str.maketrans("", "", string.punctuation))
+    text = re.sub(r"\s+", " ", text)  # Collapse newlines, tabs, etc.
+    return text.strip()
 
 def extract_skills(text, keywords):
-    return [word for word in keywords if word in text]
+    text = preprocess_text(text)
+    matched = set()
+    for word in keywords:
+        clean_word = preprocess_text(word)
+        if clean_word in text:
+            matched.add(word)
+    return list(matched)
 
 #  Main pipeline
 
@@ -24,7 +39,7 @@ def main(resume_path, skill_db_path, role):
 
     print("🧠 Extracting skills...")
     extracted = extract_skills(resume_text, expected_keywords)
-    print(f"✅ Extracted {len(extracted)} potential skills\n")
+    print(f"✅ Extracted {extracted} potential skills\n")
 
     print("📊 Evaluating resume...\n")
     report = evaluate_resume(extracted, expected_keywords, role)

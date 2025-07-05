@@ -1,7 +1,7 @@
 Role,Skills,ATS Keywords
 Web Developer,"HTML, CSS, JavaScript, React, Node.js, Git, REST APIs","frontend, backend, web development, responsive design, UI, UX, API integration"
 Data Scientist,"Python, Pandas, NumPy, Scikit-learn, Jupyter, Statistics","data cleaning, machine learning, predictive analytics, data modeling, exploratory analysis"
-Data Analyst,"SQL, Excel, Tableau, Power BI, Python (Pandas), Data Visualization","pivot tables, KPI analysis, ad-hoc reports, dashboards, business intelligence"
+Data Analyst,"SQL,Excel,Tableau,Power BI,Python,Pandas,Data Visualization,numpy,seaborn,matplotlib","pivot tables,KPI analysis, ad-hoc reports,dashboards,business intelligence"
 Data Engineer,"Python, Spark, SQL, Airflow, Kafka, Snowflake","ETL pipelines, big data, data warehouse, stream processing, schema design"
 Machine Learning Engineer,"Python, TensorFlow, PyTorch, Scikit-learn, Model Deployment","deep learning, classification, regression, cross-validation, tuning"
 AI Engineer,"NLP, Computer Vision, Transformers, HuggingFace, Python","chatbots, intelligent systems, generative models, model training, inference"
