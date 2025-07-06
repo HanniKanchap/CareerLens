@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 all_jobs = []
-for i in range(2,4):
+for i in range(2,6):
     url = f"https://internshala.com/internships/information-technology-internship/page-{i}"
     r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
     print(r)

@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 
 all_jobs = []
 
-for i in range(2,4):
-    url = f"https://internshala.com/jobs/information-technology-jobs/page-{i}"
+for i in range(2,3):
+    url = f"https://internshala.com/jobs/information-technology-jobs"
     response = requests.get(url,headers = {"User-Agent": "Mozilla/5.0"})
     print(response)
     soup = BeautifulSoup(response.text,'html.parser')
@@ -32,5 +32,5 @@ print(df)
 p = input("Continue ? ")
 if p == 'n':
     exit(0)
-df.to_csv("./data/Jobs_data_.csv",index = False)
+df.to_csv("career_lens_jobs.csv",index = False)
 print("🌟 Saved data")
