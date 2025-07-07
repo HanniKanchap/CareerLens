@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 all_jobs = []
-for i in range(2,6):
-    url = f"https://internshala.com/internships/information-technology-internship/page-{i}"
+for i in range(2,3):
+    url = f"https://internshala.com/internships/information-technology-internship"
     r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
     print(r)
     soup = BeautifulSoup(r.text, "html.parser")
