@@ -14,4 +14,4 @@ reportlab
 langchain
 langchain-groq
 markdown
-streamlit_lottie
+python-dotenv
