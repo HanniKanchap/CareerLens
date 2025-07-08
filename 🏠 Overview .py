@@ -110,7 +110,7 @@ st.markdown("""
 🎯 Designed for job seekers, career coaches & resume reviewers.
 """)
 
-# ---- Features with Links to Pages ----
+# ---- Features ----
 st.markdown("---")
 st.markdown("### 🌟 *Platform Features*")
 
